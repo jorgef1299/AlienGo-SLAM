@@ -1,0 +1,36 @@
+frame_id: "livox_frame"
+#frame_id: "tracking_camera_odom_frame"
+xfer_format: 0
+publish_freq: 10.0  #5, 10, 20, 50
+enable_lidar_bag: false
+display_pointcloud2: {
+  size_pixels: 2,
+  decay_time: 0.5,
+}
+top_camera: {
+  rgb_image_topic: "/top_camera/color/image_raw",
+  depth_image_topic: "/top_camera/depth/image_rect_raw",
+  colorize_min_depth: 500,
+  colorize_max_depth: 30000,
+}
+bottom_camera: {
+  rgb_image_topic: "/camera/color/image_raw",
+  depth_image_topic: "/camera/depth/image_rect_raw",
+  colorize_min_depth: 0,
+  colorize_max_depth: 20000,
+}
+map: {
+   3d_topic: "/livox/lidar",
+   2d_topic: "/livox/lidar",
+}
+odometry: {
+   topic: "/tracking_camera/odom/sample",
+   position_tolerance: 0.1, # meters
+   angle_tolerance: 0.1, # rad
+   samples_to_keep: 100,
+   shape: {
+      alpha: 0.7,
+      shaft_length: 0.5,
+      head_length: 0.1,
+   }
+}

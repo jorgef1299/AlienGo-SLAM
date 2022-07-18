@@ -1,0 +1,9 @@
+<launch>
+    <rosparam file="$(find AlienGo)/config/aliengo_params.yaml" />
+    <node name="aliengo_gui" pkg="AlienGo" type="AlienGo_node" required="true" output="screen"/>
+<!--    <node name="livox_lidar_publisher" pkg="livox_ros_driver" type="livox_ros_driver_node" required="true" output="screen"/> -->
+<!--     <node pkg="joy" type="joy_node" name="turtle_joy"> -->
+<!--         <param name="dev" type="string" value="/dev/input/js0" /> -->
+<!--         <param name="deadzone" value="0.12" /> -->
+<!--     </node> -->
+</launch>
